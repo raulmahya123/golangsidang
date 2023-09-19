@@ -47,7 +47,7 @@ func main() {
 			prompt := string(msg)
 
 			go func() {
-				cli := openai.NewClient("ENV")
+				cli := openai.NewClient("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")
 
 				var output string
 				for _, entry := range dataSet {
