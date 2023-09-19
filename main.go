@@ -12,6 +12,7 @@ import (
 
 	"github.com/fogleman/gg" // Import modul "gg"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/websocket/v2"
 	"github.com/jdkato/prose/v2"
@@ -30,6 +31,7 @@ func main() {
 		log.Fatalf("Failed to read dataset from CSV: %v", err)
 	}
 	app := fiber.New()
+	app.Use(cors.New())
 	app.Use(logger.New())
 
 	app.Get("/ws", websocket.New(func(c *websocket.Conn) {
