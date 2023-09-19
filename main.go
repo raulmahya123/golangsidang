@@ -30,6 +30,7 @@ func main() {
 	if err := readDataSetFromCSV("iriss.csv"); err != nil {
 		log.Fatalf("Failed to read dataset from CSV: %v", err)
 	}
+	//asdas
 	app := fiber.New()
 	app.Use(cors.New())
 	app.Use(logger.New())
